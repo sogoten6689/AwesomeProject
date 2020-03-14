@@ -2,10 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 
-const [value, onChangeText] = React.useState('Useless Placeholder');
-
 export class BasicCalculatorScreen extends React.Component {
-  
   render() {
     return (
       <View style={styles.container}>
