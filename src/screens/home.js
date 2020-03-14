@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export class Home extends React.Component {
+export class HomeScreen extends React.Component {
   gotoBasicCalculatorScreen = () => {
     this.props.navigation.navigate('basicCalculatorScreen');
   }

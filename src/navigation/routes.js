@@ -3,27 +3,34 @@
   createSwitchNavigator,
 } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Home } from '../screens/home';
+import { HomeScreen } from '../screens/home';
 import { BasicCalculatorScreen } from '../screens/basicCalculatorScreen';
 import { SuperlativeEquationScreen } from '../screens/superlativeEquationScreen';
+import { ResultScreen } from '../screens/result';
 
 const AppMain = createStackNavigator(
   {
-    ['Home']: Home,
+    ['homeScreen']: {
+      screen: HomeScreen,
+      navigationOptions: {
+        title: 'Home'
+      }
+    },
     ['basicCalculatorScreen']: {
       screen: BasicCalculatorScreen,
       navigationOptions: {
-        title: 'Basic Calculator'
+        title: 'Basic Calculator',
       }
     },
-    ['superlativeEquationScreen']: SuperlativeEquationScreen
+    ['superlativeEquationScreen']: SuperlativeEquationScreen,
+    ['resultScreen']: ResultScreen
   },
 );
 
 const createAppRouter = (container) => {
   return createAppContainer(createSwitchNavigator(
     {
-      ['appLoader']: Home,
+      ['appLoader']: HomeScreen,
       ['app']: container,
     },
     {
